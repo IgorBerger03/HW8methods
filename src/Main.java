@@ -22,6 +22,8 @@ public class Main {
             System.out.println("Установите версию приложения для Android по ссылке");
         } else if (clientOS != 0 && currentYear < 2015) {
             System.out.println("Установите облегченную версию приложения для Android по ссылке");
+        } else {
+            System.out.println("Данные версии не поддерживаются устройством");
         }
     }
 
@@ -30,15 +32,18 @@ public class Main {
             System.out.println("Потребуется 1 день");
         } else if (deliveryDistance > 20 && deliveryDistance < 60) {
             System.out.println("Потребуется 2 дня");
-        } else {
+        } else if (deliveryDistance > 60 && deliveryDistance <= 100) {
             System.out.println("Потребуется 3 дня");
+        } else {
+            System.out.println("Доставка в ваш регион недоступна");
+
     }
         return deliveryDistance;
     }
     public static void main (String[] args){
             getLeapYear(currentYear);
-            int OS = 0;
-            getVersionOS(OS);
+            int oS = 0;
+            getVersionOS(oS);
             int distance = 95;
             getDeliveryDays(distance);
         }
